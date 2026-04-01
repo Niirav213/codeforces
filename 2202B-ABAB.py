@@ -6,19 +6,27 @@ def solve():
         if not line1:
             return
         n = int(line1.strip())
-        s = sys.stdin.readline()
+        s = sys.stdin.readline().strip()
     except ValueError:
         return
     
-    for i in range(n):
-        if (n-1-i) % 2 == 0:
-            target_idx = (n+1+i)//2
-            required_char = 'a' if target_idx % 2 != 0 else 'b'
-
-            if s[i] != '?' and s[i] != required_char:
+    #for odd lenght
+    if(n&1):
+        if s[0] == 'b':
+            print("No")
+            return
+        for i in range(1,n - 1, 2):
+            if s[i] != s[i+1] or s[i] == '?' or s[i+1] == '?': continue
+            else:
                 print("No")
                 return
-    print("Yes")
+    else:
+        for i in range(0, n - 1 , 2 ):
+            if s[i] != s[i+1] or s[i] == '?' or s[i+1] == '?': continue
+            else:
+                print("No")
+                return
+    print("yes")
 
 def main():
     line = sys.stdin.readline()
