@@ -1,0 +1,26 @@
+from re import L
+import sys
+
+def solve():
+    n = int(sys.stdin.readline())
+    a = list(map(int, sys.stdin.readline().split()))
+    b = list(map(int, sys.stdin.readline().split()))
+
+    for i in range(n):
+        if a[i] > b[i]:
+            temp = a[i]
+            a[i] = b[i]
+            b[i] = temp
+    
+    ans = max(a) + sum(b)
+    print(ans)
+
+def main():
+    l = int(sys.stdin.readline())
+
+    if l:
+        for _ in range(l):
+            solve()
+
+if __name__=="__main__":
+    main()
