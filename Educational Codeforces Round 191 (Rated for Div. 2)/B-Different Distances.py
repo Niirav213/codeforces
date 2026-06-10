@@ -1,22 +1,23 @@
 import sys
 
-
 def solve():
     n = int(sys.stdin.readline())
 
-    b1 = list(range(1, n+1))
+    print(n, end=" ")
 
-    
-    b2 = list(range(n, 0, -1))
 
-    rev = list(range(n, 0, -1))
+    for i in range(1, n + 1):
+        print(f"{i} {i}", end=" ")
 
-    b3 = rev[2:] + rev[:2]  
 
-    b4  = list(range(2, n+1)) + [1]
+    for i in range(1, n + 1):
+        print(i, end=" ")
 
-    ans = b1 + b2 + b3 + b4
-    print(*ans)
+
+    for i in range(1, n):
+        print(i, end=" ")
+    print()
+
 
 if __name__=="__main__":
     l = int(sys.stdin.readline())
