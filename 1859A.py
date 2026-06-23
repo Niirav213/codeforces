@@ -14,7 +14,7 @@ def solve():
     else:
         it = 0
         while a[it] == a[0]:
-            at += 1
+            it += 1
         b = a[:it]
         c = a[it:]
         
